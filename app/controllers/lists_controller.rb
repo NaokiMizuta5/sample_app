@@ -8,7 +8,7 @@ class ListsController < ApplicationController
     
   # エラーメッセージを扱うときにはrender, それ以外はredirect_to
     if @list.save
-      redirect_to list_path(list.id)
+      redirect_to list_path(@list.id)
     else
       render :new
   # ここでredirect_toを使うと@listがnewアクション中でリセットされ、エラーを取得できない
